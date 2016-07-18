@@ -1,3 +1,4 @@
+require_relative 'item'
 class Item
 
   attr_reader :code, :name, :price, :catalogue
