@@ -9,11 +9,14 @@ class MultibuyDisc
   end
 
   def calculate_disc(order)
-    if order[@code] >= @quantity
-      return order[@code] * multibuy_saving
-    else
-      return 0
-    end
+    return saving(order) if order[@code] >= @quantity
+    return 0
+  end
+
+  private
+  
+  def saving(order)
+    order[@code] * multibuy_saving
   end
 
 end

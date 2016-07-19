@@ -8,11 +8,14 @@ class TargetSpendDisc
   end
 
   def calculate_disc(total)
-    if total > @target_spend
-      return total * @discount
-    else
-      return 0
-    end
+    return saving(total) if total > @target_spend
+    return 0
   end
-  
+
+  private
+
+  def saving(total)
+    total * @discount
+  end
+
 end
