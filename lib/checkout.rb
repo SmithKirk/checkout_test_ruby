@@ -1,9 +1,11 @@
+require 'bigdecimal'
 class Checkout
 
   attr_reader :basket
 
-  def initialize(item_klass)
+  def initialize(item_klass, promotion_klass)
     @catalogue = item_klass.catalogue
+    @promotions = promotion_klass
     @basket = Hash.new(0)
   end
 
@@ -13,7 +15,7 @@ class Checkout
   end
 
   def total
-    "£#{basket_total.round(2)}"
+    "£#{(basket_total - discount).round(2)}"
   end
 
   private
@@ -35,5 +37,9 @@ class Checkout
       [item.code, item.price]
     end
     price_list.to_h
+  end
+
+  def discount
+    @promotions.apply_discounts(basket_total, basket)
   end
 end

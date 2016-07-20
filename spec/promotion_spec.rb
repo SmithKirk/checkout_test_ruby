@@ -25,7 +25,7 @@ describe Promotion do
 
   context 'after discount rules are set' do
     before do
-          promo.set_target_spend_rule(60, 10)
+          promo.set_target_spend_rule(60, 0.10)
           promo.set_multibuy_rule('001', 2, 0.75)
         end
 

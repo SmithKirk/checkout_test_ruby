@@ -23,6 +23,8 @@ class Promotion
     @target_spend_rule.calculate_disc(total - apply_multibuy(order))
   end
 
+  private
+  
   def apply_multibuy(order)
     @multibuy_rule.reduce(0) do |saving, rule|
       saving + rule.calculate_disc(order)

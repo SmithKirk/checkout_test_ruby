@@ -1,7 +1,8 @@
 describe Checkout do
 
-  subject(:checkout){described_class.new(item_klass)}
+  subject(:checkout){described_class.new(item_klass, promotion_klass)}
   let(:item_klass) {double catalogue: [item1, item2]}
+  let(:promotion_klass) {double apply_discounts: 0}
   let(:item1){double(code: '001', name: 'Lavender heart', price: 9.25)}
   let(:item2){double(code: '002', name: 'Personalised cufflinks', price: 45.00)}
 
