@@ -8,17 +8,21 @@ The purpose of creating this system was to demonstrate my OOP and TDD skills usi
 ## Installation
 
 * Clone this repository
-```$ git clone github.com/SmithKirk/checkout_test_ruby
+```
+$ git clone github.com/SmithKirk/checkout_test_ruby
 ```
 
 * Change into directory
-```$ cd checkout_test_ruby
+```
+$ cd checkout_test_ruby
 ```
 
 * Install dependencies
-```$ bundle install
+```
+$ bundle install
 ```
 
 * Run tests with RSpec
-```$ rspec
+```
+$ rspec
 ```
